@@ -18,7 +18,8 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @req = Request.all
+    @requests = @req.sort_by &:time
   end
 
   private

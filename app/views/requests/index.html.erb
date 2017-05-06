@@ -1,4 +1,7 @@
 <h2>Här finner du alla aktiva förfrågningar</h2>
 <% @requests.each do |req| %>
+<h5>Beskrivning</h5>
 <%= req.description %>
+<h5>Önskad tidpunkt</h5>
+<%= req.time.strftime("%Y-%m-%d %H:%M") %>
 <%end%>
