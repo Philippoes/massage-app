@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'requests/new'
+
+  get 'requests/create'
+
+  get 'requests/show'
+
+  root controller: :requests, action: :new
+  resources :requests, only: [:new, :create, :show, :index, :edit, :update]
+  resources :answers, only: [:create]
 end
