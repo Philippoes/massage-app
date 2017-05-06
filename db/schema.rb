@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170506132945) do
     t.string "address"
     t.integer "phone"
     t.string "email"
-    t.integer "pricerange"
+    t.string "pricerange"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_users_on_city_id"
   end
