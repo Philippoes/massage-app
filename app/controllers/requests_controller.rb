@@ -4,7 +4,11 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new request_params
+
+    city = City.find(params[:city][:city_id])
+
+    @request = Request.new(description: request_params[:description], time: request_params[:time], city: city)
+    #@request = Request.new(request_params)
     if @request.save
       flash[:notice] = "Förfrågan skapad"
       redirect_to(@request)
@@ -25,6 +29,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:description, :time)
+    params.require(:request).permit(:description, :time, :city)
   end
 end
