@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
     @request = Request.new request_params
     if @request.save
       flash[:notice] = "Förfrågan skapad"
-      redirect_to(requests_show_path, {:id => `${@request.id}`})
+      redirect_to(@request)
     else
       flash[:alert] = "Var vänlig fyll i alla fält"
     end
