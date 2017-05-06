@@ -1,7 +1,14 @@
-<h3>Din förfrågan</h3>
-<h4>Här finner du all information om din förfrågan</h4>
-<%= @request.description %>
-<h5>Skapad</h5>
-<%= @request.time.strftime("%Y-%m-%d %H:%M") %>
-<h5>Stad</h5>
-<%= @request.city.name %> </br>
+<div class="hero">
+  <h1 style="text-align: center; padding-top: 80px;">
+    Din förfrågan</h1>
+
+  <%= form_for (@request) do |f| %>
+      <div class="row" style="margin-top: 150px;">
+        <div class="small-2 large-4 columns">
+          <h4>Här finner du all information om din förfrågan</h4>
+          <h5>Beskrivning: <%= @request.description %></h5>
+          <h5>Skapad: <%= @request.time.strftime("%Y-%m-%d %H:%M") %></h5>
+          <h5>Stad:  <%= @request.city.name %></h5>
+
+  <% end %>
+  </div>

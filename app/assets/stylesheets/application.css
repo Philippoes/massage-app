@@ -14,4 +14,18 @@
  *= require_self
  *= require foundation_and_overrides
 
- */
+
+
+
+
+/*    Hero    */
+
+.hero {
+    width: 100%;
+    height: 750px;
+    background: url('http://www.no-zaku.com/background/wp-content/uploads/sites/9/2016/11/Simple-White-Background-Images-For-Websites.jpg') no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
