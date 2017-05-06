@@ -1,22 +1,27 @@
-<h3>Din förfrågan</h3>
-<h4>Här finner du all information om din förfrågan</h4>
-<%= @request.description %>
-<h5>Skapad</h5>
-<%= @request.time.strftime("%Y-%m-%d %H:%M") %>
-<h5>Stad</h5>
-<%= @request.city.name %> </br>
+<div class="hero">
+  <h1 style="text-align: center; padding-top: 80px;">
+    Din förfrågan</h1>
+  <div class="row" style="margin-top: 150px; height: 100%">
+    <div class="small-6 large-6 columns">
+      <h4>Här finner du all information om din förfrågan</h4>
+      <h5>Beskrivning: <%= @request.description %></h5>
+      <h5>Skapad: <%= @request.time.strftime("%Y-%m-%d %H:%M") %></h5>
+      <h5>Stad:  <%= @request.city.name %></h5>
+    </div>
+    <div class="small-6 large-6 columns">
+
+      <% if @request.answers %>
+          <% @request.answers.each do |a| %>
+              <p>Namn:  <%= a.user.name %> | Rating:  <%= a.user.rating %> </p>
+              <p>Adress:  <%= a.user.address %> | Telefonnr: <%= a.user.phone %></p>
+              <p>E-mail:  <%= a.user.email %> | Prisintervall: <%= a.user.pricerange %></p>
+              <br/><button style="height: 50px; width:auto;border-radius: 10px;" type="submit" class="button round large">Boka</button>
+
+    <% end %>
+      <% else %>
+          <p>Det finns inga svar</p>
 
 
-<% if @request.answers %>
-<% @request.answers.each do |a|%>
-<p>Namn:  <%= a.user.name %></p>
-<p>Rating:  <%= a.user.rating %>
-<p>Adress:  <%= a.user.address %>
-<p>Telefonnr: <%= a.user.phone %>
-<p>E-mail:  <%= a.user.email %>
-<p>Prisintervall: <%= a.user.pricerange %>
-<% end %>
-<% else %>
-<p>Det finns inga svar</p>
-
-<% end %>
+      <% end %>
+    </div>
+  </div>

@@ -1,10 +1,20 @@
+<div class="hero">
+<h1 style="text-align: center; padding-top: 80px;">Ta bort din ryggont</h1>
+
 <%= form_for (@request) do |f| %>
-    <%= f.label(:description, "Förfrågan") %><br/>
-    <%= f.text_area(:description) %><br/>
-    <%= f.label(:city, "Plats") %><br/>
-    <%= collection_select(:city, :city_id, City.all, :id, :name)%><br/>
-    <%= f.label(:time, "Tid") %><br/>
-    <%= f.date_field(:time) %><br/>
-    <button type="submit" class="success button" >Save</button>
+    <div class="row" style="margin-top: 150px;">
+      <div class="small-2 large-4 columns"><%= f.label(:description, "Beskriv din förfrågan") %>
+      <br/><%= f.text_area(:description) %><br/></div>
+      <div class="small-4 large-4 columns"><%= f.label(:city, "Vart bor du?") %>
+        <br/><%= collection_select(:city, :city_id, City.all, :id, :name) %><br/></div>
+      <div class="small-6 large-4 columns">   <%= f.label(:time, "När kan du?") %><br/>
+        <%= f.date_field(:time) %><br/></div>
+    </div>
+    <button style="margin-left: 46%; height: 50px; width:auto;border-radius: 10px;" type="submit" class="button round large">Skicka förfrågan</button>
+
+
+
+
 
 <% end %>
+</div>
