@@ -1,2 +1,9 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<%= form_tag requests_path do %>
+    <%= label_tag(:description, "Förfrågan") %><br/>
+    <%= text_area_tag(:description, "Beskriv ditt problem", rows: "7") %><br/>
+    <%= label_tag(:time, "Tid") %><br/>
+    <%= text_area_tag(:time, "När kan du?") %><br/>
+    <%= label_tag(:area, "Stad") %><br/>
+    <%= text_field_tag(:area, "Välj stad") %><br/>
+    <%= submit_tag "Boka" %>
+<% end %>
