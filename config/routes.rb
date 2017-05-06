@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'requests/show'
 
   root controller: :requests, action: :new
-  resources :requests, only: [:new, :create, :show, :edit, :update]
+  resources :requests, only: [:new, :create, :show, :index, :edit, :update]
+  resources :answers, only: [:create]
 end
