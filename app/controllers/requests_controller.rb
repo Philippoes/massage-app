@@ -17,6 +17,11 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
   end
 
+  def index
+    @req = Request.all
+    @requests = @req.sort_by &:time
+  end
+
   private
 
   def request_params
