@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'landing/index'
+  get 'requests/new'
 
-  root controller: :landing, action: :index
+  get 'requests/create'
+
+  get 'requests/show'
+
+  root controller: :requests, action: :new
   resources :requests, only: [:new, :create, :show, :edit, :update]
 end
