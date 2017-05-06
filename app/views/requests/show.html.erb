@@ -1,8 +1,9 @@
 <h3>Din förfrågan</h3>
-<p>Här finner du all information om din förfrågan</p>
-
-<%= @request.description %> </br>
-<%= @request.time %> </br>
+<h4>Här finner du all information om din förfrågan</h4>
+<%= @request.description %>
+<h5>Skapad</h5>
+<%= @request.time.strftime("%Y-%m-%d %H:%M") %>
+<h5>Stad</h5>
 <%= @request.city.name %> </br>
 
 
