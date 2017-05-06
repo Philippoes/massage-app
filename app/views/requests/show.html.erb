@@ -9,12 +9,12 @@
 
 <% if @request.answers %>
 <% @request.answers.each do |a|%>
-<%= a.user.name %>
-<%= a.user.rating %>
-<%= a.user.address %>
-<%= a.user.phone %>
-<%= a.user.email %>
-<%= a.user.pricerange %>
+<p>Företagsnamn:  <%= a.user.name %></p>
+<p>Rating:  <%= a.user.rating %>
+<p>Adress:  <%= a.user.address %>
+<p>Telefonnr: <%= a.user.phone %>
+<p>E-mail:  <%= a.user.email %>
+<p>Prisintervall: <%= a.user.pricerange %>
 <% end %>
 <% else %>
 <p>Det finns inga svar</p>
