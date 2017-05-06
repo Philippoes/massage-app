@@ -5,3 +5,18 @@
 <%= @request.time.strftime("%Y-%m-%d %H:%M") %>
 <h5>Stad</h5>
 <%= @request.city.name %> </br>
+
+
+<% if @request.answers %>
+<% @request.answers.each do |a|%>
+<p>Namn:  <%= a.user.name %></p>
+<p>Rating:  <%= a.user.rating %>
+<p>Adress:  <%= a.user.address %>
+<p>Telefonnr: <%= a.user.phone %>
+<p>E-mail:  <%= a.user.email %>
+<p>Prisintervall: <%= a.user.pricerange %>
+<% end %>
+<% else %>
+<p>Det finns inga svar</p>
+
+<% end %>
