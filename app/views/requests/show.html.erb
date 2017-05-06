@@ -4,3 +4,18 @@
 <%= @request.description %> </br>
 <%= @request.time %> </br>
 <%= @request.city.name %> </br>
+
+
+<% if @request.answers %>
+<% @request.answers.each do |a|%>
+<%= a.user.name %>
+<%= a.user.rating %>
+<%= a.user.address %>
+<%= a.user.phone %>
+<%= a.user.email %>
+<%= a.user.pricerange %>
+<% end %>
+<% else %>
+<p>Det finns inga svar</p>
+
+<% end %>
