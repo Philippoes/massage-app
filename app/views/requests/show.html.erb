@@ -9,7 +9,7 @@
 
 <% if @request.answers %>
 <% @request.answers.each do |a|%>
-<p>Företagsnamn:  <%= a.user.name %></p>
+<p>Namn:  <%= a.user.name %></p>
 <p>Rating:  <%= a.user.rating %>
 <p>Adress:  <%= a.user.address %>
 <p>Telefonnr: <%= a.user.phone %>
