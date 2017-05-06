@@ -1,9 +1,7 @@
-<%= form_tag requests_path do %>
-    <%= label_tag(:description, "Förfrågan") %><br/>
-    <%= text_area_tag(:description, "Beskriv ditt problem", rows: "7") %><br/>
-    <%= label_tag(:time, "Tid") %><br/>
-    <%= text_area_tag(:time, "När kan du?") %><br/>
-    <%= label_tag(:area, "Stad") %><br/>
-    <%= text_field_tag(:area, "Välj stad") %><br/>
-    <%= submit_tag "Boka" %>
+<%= form_for (@request) do |f| %>
+    <%= f.label(:description, "Förfrågan") %><br/>
+    <%= f.text_area(:description) %><br/>
+    <%= f.label(:time, "Tid") %><br/>
+    <%= f.date_field(:time) %><br/>
+    <%= f.submit "Boka" %>
 <% end %>

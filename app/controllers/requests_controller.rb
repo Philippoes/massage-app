@@ -1,10 +1,11 @@
 class RequestsController < ApplicationController
   def new
+    @request = Request.new
   end
 
   def create
-    request = Request.new(request_params)
-    if request.save
+    @request = Request.new request_params
+    if @request.save
       flash[:notice] = "Förfrågan skapad"
       redirect_to(requests_show_path)
     else
@@ -16,7 +17,8 @@ class RequestsController < ApplicationController
   end
 
   private
+
   def request_params
-    params.require(:request).permit(:description, :time, :area)
+    params.require(:request).permit(:description, :time)
   end
 end
